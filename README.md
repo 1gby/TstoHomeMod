@@ -14,9 +14,9 @@ The following instructions are only for rooted Android (Phones), Android Emulato
 	View our video on how to root BlueStacks 5 and install the modded TSTO files - https://youtu.be/HbFgJXo5f3E
 	View our video on how to root Nox Player and install the modded TSTO files - https://youtu.be/oH_NjTgZPHQ
 	
-2)	Download/install the normal game on your device from the AppStore or Playstore
+2)	Download/install the Patched apk/ipa on your device
 
-3)	Then start the game and let it download all the updates (until the spinning donut disappears)
+3)	Then start your server then game and let it download all the updates (until the spinning donut disappears)
 	Log into your account to ensure you have the normal game
 	Close the game completely from your device
 
