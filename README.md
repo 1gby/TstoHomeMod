@@ -1,36 +1,44 @@
-# TstoHomeMod
-Root Mod for Simpson's Tapped out
+# TstoHome Root Mod
 
+Root mod files updated on September 28, 2024
 
+You will need to find these folders in FX File Explorer
 
-Most of you probably already know that the way most of the hacks out there work, including mine, is by pointing the game to an alternate server to obtain it's downloadable content from (usually called DLC). This other server then has an altered version of the DLC. Whenever a new update comes out, I have to download the DLC files from EA's server and extract them, apply my changes, and do a few top-secret things to make the modified DLC compatible with the game. Today, I'm going to share with you the first step, of downloading and extracting the DLC from EA.
-Why? Well mainly as a way of thanking you for your dedication to the cause, but also because by being able to read the behind-the-scenes information, you might be able to better help people with questions about the game's mechanics. Also, it's not really a big secret. There are several non-hackers who already know how to do this, and while it is a necessary step to be able to hack the game, it's not even close to the difficulty of figuring out how to rebuild the edited DLC in such a way that the game will read it. So I'd prefer if you did not share these instructions with the general public, but feel free to show your friends if you wish.
-Instructions
+4_69_UntroubledVases_Patch2_O0XTYOZLM6ZN
+gamescripts-r497432-LYOXW1QI
+textpools-en-r497432-LYOXW1QI
 
-Download the master file from http://cdn.adc.eamobile.com/gameasset/direct/simpsons/dlc/DLCIndex.zip[1] 
-Unzip the file and open DLCIndex.xml in a text-editor (or just view it in the Preview pane of Windows Explorer). The second line will have an <IndexFile> element, with an index attribute that starts with "dlc:" followed by a long filename. You want to copy the text starting with "DLCIndex-" all the way up to and including the .zip extension. In your web browser, type in http://cdn.adc.eamobile.com/gameasset/direct/simpsons/dlc/[2] and after that last forward-slash paste the filename, and hit enter. For example: http://cdn.adc.eamobile.com/gameasset/direct/simpsons/dlc/DLCIndex-v4_12_MichaelDamico-r161263-40620FB7.zip[3] 
-Unzip this file, open or preview it, and look for the first <FileName> tag, usually on line 8. It's val attribute should have the word "gamescripts" in it. Copy all the text inside the quotes. Now in your browser, type in http://cdn.adc.eamobile.com/gameasset/direct/simpsons/[4] (note that the "dlc" part has been removed) and paste the copied text BUT DON'T HIT ENTER YET. About halfway through the copied text will be a : character, which you need to replace with a forward slash / character. Then press enter to download. If you get a 404 error, you've probably either forgotten to remove the "dlc" from the path, or didn't change the : to a / in the filename. It should look something like this: http://cdn.adc.eamobile.com/gameasset/direct/simpsons/4_12_DAmico_DDV3E30M2HZ9/gamescripts-r161263-40620FB7.zip[5] 
-Unzip this gamescripts file. It should contain a small file named "0" and a huge file named "1". For a while they were breaking up the 1 file into smaller files named 2, 3, 4, 5 etc but seems to have realized it doesn't make a difference and went back to storing everything in "1".
-Rename "1" to "1.zip" and unzip it. You'll get hundreds of xml files and about 256 scorpio******.sbtp files. This is the stuff you'll be looking at, but read on for an explanation of which particular ones might be of interest to you.
-WARNING: Do not attempt to use these steps to download the DLC files used by my hack, assuming you even know the url. The script that distributes the files will see that you are using a web browser and will report it to me - and I have very little tolerance for anyone trying to steal my DLC. Only the game can safely make requests to my server script to obtain the DLC files.
-Scorpio files
+The following instructions are only for rooted Android (Phones), Android Emulator (PC) and Jailborken iOS devices:
 
-You can delete the scorpio files if you want, as they aren't viewable as plain text and require more "secret" knowledge to manipulate them. They contain all the text you see in the game. Every label, menu entry, dialogue, system message, and so on is mapped by these files. For example, they might have a message code named "xmas2014guidepanel_title" that maps to the text "Winter 2014 Part 1 Guide" in the English file. There's a set of files for each of the languages supported by the game. That way, when the developers create a window for the Xmas instructions, they just tell it to use xmas2014guidepanel_title at the top, and it will display . I only mention these files so that you can understand how the "codes" you might see in the xml get translated into actual text.
-*_buildings.xml and *_decorations.xml files
+1)	Ensure your device is rooted or jailbroken before you proceed with the below instructions
+	View our video on how to root BlueStacks 5 and install the modded TSTO files - https://youtu.be/HbFgJXo5f3E
+	View our video on how to root Nox Player and install the modded TSTO files - https://youtu.be/oH_NjTgZPHQ
+	
+2)	Download/install the normal game on your device from the AppStore or Playstore
 
-Prior to the Squidport release (summer 2013), all buildings were put in buildings.xml and all decorations in decorations.xml. Since then, each update that comes out now has its own set of files, and usually includes files to describe the new buildings and decorations for that update. Some of the things that might be of interest are:
-Requirements: this tells you what requirements are needed to be allowed to buy the item. They are usually pretty easy to interpret. When it says not="true" in a requirement that means the user must NOT have the stated item or quest. Sometimes there are branching conditions, in which the requirement in the <Condition> tag determines whether to use the part in the <True> tag or the <False> tag.
-VisibilityRequirements: this tells you what requirements are needed for the item to be visible in the menus.
-Character: If a building has a <Character> tag, the named character is linked to the building.
-GridType: describes where a building or decoration can be placed.
-RatingElem: determines which conform-o-meter rating to add to, and by how much. The categories in the code are not exactly the ones you see in the game - for example, the "Gluttony" category is called "Restaurant" in the code.
-Unique: pretty obvious... indicates if you can have more than one of this item
-Sell: determines if you are allowed to sell the item. Also has a storeOverride attribute, which when set to true means you cannot store the item in inventory.
-Quests
+3)	Then start the game and let it download all the updates (until the spinning donut disappears)
+	Log into your account to ensure you have the normal game
+	Close the game completely from your device
 
-In questpackages.xml you'll find a full list of all the quests, with the package name telling you what file to look inside for more details. The main questline for the first 24 levels is found in quests_buildingunlocks.xml, and after that it's all in different files for each level - usually named after the character featured in the level. Looking at these quest files can be a very useful way to help someone figure out why they can't seem to get a certain quest to trigger. The requirements must all be met (unless enclosed in a <Requirement logic = "OR"> tag in which case only one of them in that enclosed set need to be met). Also, the <StartScript> tag names a character who also needs to be free in order for the quest to trigger.
-Dates.xml
+4)	For Android/BlueStacks download/install FX Explorer from your Playstore and open up the application
 
-A simple and straightforward file that assigns dates to various variables that are used in other files, mainly for restricting when quests can be triggered and when certain items may be visible in the menus (see buildmenu files for that).
-There's a lot more interesting files, but I don't have time to explain them all right now - I may edit this post later with more details, so check back in a week or two. If you've got time to kill, go take a look through them and see what you can find. Feel free to ask questions, I don't mind sharing my knowledge in regards to how these files work.
+5)	Click on split and then click on Recent and also click on System(Root) icon and follow the path below
+	You will need to find one of these 2 folders in FX File Explorer:
+	
+	Click on System (Root) folder and then 
+	/data/data/com.ea.game.simpsons4_na/files/dlc or simpsons4_row depending on where you live.
+	files/dlc/4_69_UntroubledVases_Patch2_O0XTYOZLM6ZN/gamescripts-r497432-LYOXW1QI
 
+	Once you have found the correct gamescripts folder, click on it and delete the normal 0 and 1 files inside and move the modded ones to this folder
+	Drag and Drop
+	
+6)	Below the gamescripts click on the textpools folder called textpools-en-r497432-LYOXW1QI and delete 0 and 1 files.
+	This is so you can see all the custom buttons with descriptions in the mod 
+	
+7)	Close FX Explorer and start the game. Enjoy the modded version of The Simpsons Tapped Out game
+	
+On jailbroken iOS devices you have to search for gamescripts-r497432-LYOXW1QI folder too.
+You can use iFunbox Computer tool to search this folder and to copy the files over.
+./User/Containers/Data/Application/XXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/Library/Caches/dlc/4_69_UntroubledVases_Patch2_O0XTYOZLM6ZN/gamescripts-r497432-LYOXW1QI
+
+Happy Tapping and as always enjoy!
